@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 
 class QRGenerator extends StatefulWidget {
-  const QRGenerator({Key? key}) : super(key: key);
+  const QRGenerator({super.key});
 
   @override
   State<QRGenerator> createState() => _QRGeneratorState();
@@ -33,14 +33,14 @@ class _QRGeneratorState extends State<QRGenerator> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               TextField(
                 onSubmitted: (value) {
                   setState(() {
                     qrData = value;
                   });
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Enter your text here to generate QR',
                 ),
@@ -48,8 +48,8 @@ class _QRGeneratorState extends State<QRGenerator> {
               const SizedBox(
                 height: 30,
               ),
-              TextButton(onPressed: (){}, child: Text('Generate')),
-              SizedBox(height: 30,),
+              TextButton(onPressed: (){}, child: const Text('Generate')),
+              const SizedBox(height: 30,),
               if (qrData.isNotEmpty)
                 Container(
                   decoration: BoxDecoration(
@@ -59,7 +59,7 @@ class _QRGeneratorState extends State<QRGenerator> {
                         color: Colors.deepPurpleAccent.withOpacity(0.2),
                         spreadRadius: 7,
                         blurRadius: 5,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
